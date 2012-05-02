@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Monotouch | My Octopress Blog]]></title>
+  <link href="http://kevinsheffield.github.com/blog/categories/monotouch/atom.xml" rel="self"/>
+  <link href="http://kevinsheffield.github.com/"/>
+  <updated>2012-05-02T18:46:41-04:00</updated>
+  <id>http://kevinsheffield.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Monotouch Sample Code on Github]]></title>
+    <link href="http://kevinsheffield.github.com/blog/2009/09/15/monotouch-sample-code-on-github/"/>
+    <updated>2009-09-15T00:00:00-04:00</updated>
+    <id>http://kevinsheffield.github.com/blog/2009/09/15/monotouch-sample-code-on-github</id>
+    <content type="html"><![CDATA[<p>After a little bit of a tug of war, my sample code is now hosted on Github at <a href="http://github.com/kevinsheffield/MonoTouchDemos">http://github.com/kevinsheffield/MonoTouchDemos</a>.</p>
+
+<p>Check it out and give me feedback on the code and ideas for more posts!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Monotouch : Sectioned UITableViews]]></title>
+    <link href="http://kevinsheffield.github.com/blog/2009/09/14/monotouch-sectioned-uitableviews/"/>
+    <updated>2009-09-14T00:00:00-04:00</updated>
+    <id>http://kevinsheffield.github.com/blog/2009/09/14/monotouch-sectioned-uitableviews</id>
+    <content type="html"><![CDATA[<p>I was playing around some more with UITableViews and wanted to get them working the way they do in Contacts with the vertical bar on the right side of the screen providing navigation to a certain section in the list (in the case of Contacts and this example, first letter of the word).</p>
+
+<p>It is amazingly simple.  Basically you only have to override and implement a few more functions of UITableDataSource... mainly SectionIndexTitles, NumberOfSections, TitleForHeader (and TitleForFooter if you wanted a footer), SectionFor, and RowsInSection.  So maybe that wasn't just a few but they are really simple to implement.</p>
+
+<p><strong>SectionIndexTitles</strong> : This is just a string[] with all the titles you want to show on the right side scrollbar area.</p>
+
+<p><strong>NumberOfSections</strong> : Simply just a count of the number of sections.</p>
+
+<p><strong>TitleForHeader</strong> : This will set the header title for each section.  There is an int parameter and for me just returns the string at the specified index.</p>
+
+<p><strong>RowsInSection</strong> : This returns a count of the items in the current section. Using .FindAll() in my code.</p>
+
+<p><strong>SectionFor</strong> : Not exactly sure what this is for as of yet.  Seeing it used in some Obj-c code it just returned the atIndex param.  Will look into this more or would love a commentor to explain it.</p>
+
+<p>To spice this demo up I even hooked up a UISearchBar and filter the list on each keystroke.  You can notice both the items and sections being filtered out.</p>
+
+<p>Here is what it looks like when it first loads up
+<img src="http://farm4.static.flickr.com/3526/3921660933_f5a83b0801.jpg" alt="first load" /></p>
+
+<p>And this it the program after searching for something
+<img src="http://farm3.static.flickr.com/2458/3921661013_d165f4d567.jpg" alt="searched" /></p>
+
+<p>Here is the code.  All of the delegates are in the Main.cs file.</p>
+
+<p>Here is the MainWindow.designer.cs</p>
+
+<pre name="code" class="c-sharp">
+namespace SectionedUITableViewSample {
+// Base type probably should be MonoTouch.Foundation.NSObject or subclass
+[MonoTouch.Foundation.Register("AppDelegate")]
+public partial class AppDelegate {
+[MonoTouch.Foundation.Connect("window")]
+private MonoTouch.UIKit.UIWindow window {
+get {
+return ((MonoTouch.UIKit.UIWindow)(this.GetNativeField("window")));
+}
+set {
+this.SetNativeField("window", value);
+}
+}
+
+[MonoTouch.Foundation.Connect("tvc")]
+private MonoTouch.UIKit.UITableViewController tvc {
+get {
+return ((MonoTouch.UIKit.UITableViewController)(this.GetNativeField("tvc")));
+}
+set {
+this.SetNativeField("tvc", value);
+}
+}
+
+[MonoTouch.Foundation.Connect("tv")]
+private MonoTouch.UIKit.UITableView tv {
+get {
+return ((MonoTouch.UIKit.UITableView)(this.GetNativeField("tv")));
+}
+set {
+this.SetNativeField("tv", value);
+}
+}
+
+[MonoTouch.Foundation.Connect("searchBar")]
+private MonoTouch.UIKit.UISearchBar searchBar {
+get {
+return ((MonoTouch.UIKit.UISearchBar)(this.GetNativeField("searchBar")));
+}
+set {
+this.SetNativeField("searchBar", value);
+}
+}
+}
+}</pre>
+
+
+<p>And here is the Main.cs</p>
+
+<pre name="code" class="csharp">
+
+namespace SectionedUITableViewSample
+{
+    public class Application
+    {
+        static void Main (string[] args)
+        {
+            UIApplication.Main (args);
+        }
+    }
+
+    // The name AppDelegate is referenced in the MainWindow.xib file.
+    public partial class AppDelegate : UIApplicationDelegate
+    {
+        // This method is invoked when the application has loaded its UI and its ready to run
+        public override bool FinishedLaunching (UIApplication app, NSDictionary options)
+        {
+            // If you have defined a view, add it here:
+            // window.AddSubview (navigationController.View);
+            
+            TableViewDataSource tvdc = new TableViewDataSource();
+            this.tvc.TableView.DataSource = tvdc;
+            
+            this.searchBar.Delegate = new SearchDelegate(tvc, tvdc);
+            
+            window.AddSubview(this.tvc.View);
+            
+            window.MakeKeyAndVisible ();
+
+            return true;
+        }
+
+        // This method is required in iPhoneOS 3.0
+        public override void OnActivated (UIApplication application)
+        {
+        }
+    }
+    public class SearchDelegate : UISearchBarDelegate
+    {
+        public UITableViewController tvc;
+        public TableViewDataSource tvdc;
+        public SearchDelegate(UITableViewController tvc, TableViewDataSource tvdc) : base ()
+        {
+            this.tvc = tvc;
+            this.tvdc = tvdc;
+        }
+        
+        public override void TextChanged (UISearchBar searchBar, string searchText)
+        {
+            tvdc.Search(searchText);
+            tvc.TableView.DataSource = tvdc;
+            tvc.TableView.ReloadData();
+        }
+    }
+    
+    public class TableViewDataSource : UITableViewDataSource
+    {   
+        private List<string> sectionList;
+        private List<string> filteredSectionList = new List<string>();
+        private List<string> dictionaryItems = new List<string>();
+        public List<string> filteredDictionaryItems = new List<string>();
+        public TableViewDataSource ()
+        {
+            Initialize();
+        }
+        
+        public void Initialize()
+        {
+            sectionList = new List<string> {"A","B","C","D","E","F","G","H","J","I","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z" };
+            filteredSectionList = new List<string> {"A","B","C","D","E","F","G","H","J","I","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z" };
+        
+            var random = new System.Random();
+            
+            for(int i = 0; i < 2000; i++)
+            {
+                dictionaryItems.Add(sectionList[random.Next(26)] + sectionList[random.Next(26)] + sectionList[random.Next(26)] + sectionList[random.Next(26)]);
+            }
+            dictionaryItems.Sort();
+            foreach(var item in dictionaryItems)
+            {
+                filteredDictionaryItems.Add(item);  
+            }
+        }
+        
+        public void Search(string searchText)
+        {
+            filteredDictionaryItems.Clear();
+            filteredSectionList.Clear();
+            foreach(string item in dictionaryItems)
+            {
+                if(item.ToLower().Contains(searchText.ToLower()))
+                {
+                    filteredDictionaryItems.Add(item);
+                    if(filteredSectionList.Find(x => x == item[0].ToString()) == null)
+                    {
+                        filteredSectionList.Add(item[0].ToString());    
+                    }
+                }
+            }
+            filteredSectionList.Sort();
+        }
+        
+        public override string[] SectionIndexTitles (UITableView tableView)
+        {
+            return filteredSectionList.ToArray();
+        }
+        
+        public override int NumberOfSections (UITableView tableView)
+        {
+            return filteredSectionList.Count;
+        }
+        
+        public override string TitleForHeader (UITableView tableView, int section)
+        {
+            return filteredSectionList[section];
+        }
+        
+        public override int RowsInSection (MonoTouch.UIKit.UITableView tableview, int section)
+        {
+            return filteredDictionaryItems.FindAll(x => x.StartsWith(filteredSectionList[section])).Count;
+        }
+        
+        public override UITableViewCell GetCell (MonoTouch.UIKit.UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+        {
+            var termsinsection = filteredDictionaryItems.FindAll(x => x.StartsWith(filteredSectionList[indexPath.Section]));
+            
+            string dictionaryItem = termsinsection[indexPath.Row];
+            string cellID = "CellID";
+    
+            UITableViewCell cell = tableView.DequeueReusableCell(cellID);
+            if(cell == null)
+            {
+                cell = new UITableViewCell(UITableViewCellStyle.Default, cellID);
+                cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
+            }
+            cell.TextLabel.Text = dictionaryItem;
+            return cell;
+        }
+
+        public override int SectionFor (UITableView tableView, string title, int atIndex)
+        {
+            return atIndex;
+        }
+    }
+}
+</pre>
+
+
+<p>The code is up on <a href="http://github.com/kevinsheffield/MonoTouchDemos/tree/master/SectionedUITableViewSample/"> Github</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Monotouch Beta 3 is out]]></title>
+    <link href="http://kevinsheffield.github.com/blog/2009/08/17/monotouch-beta-3-is-out/"/>
+    <updated>2009-08-17T00:00:00-04:00</updated>
+    <id>http://kevinsheffield.github.com/blog/2009/08/17/monotouch-beta-3-is-out</id>
+    <content type="html"><![CDATA[<p>I am stoked about downloading it when I get back from dinner.  Going to play with the drawing API tonight!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Assignment 2B : CS193P via Monotouch]]></title>
+    <link href="http://kevinsheffield.github.com/blog/2009/08/16/assignment-2b-cs193p-via-monotouch/"/>
+    <updated>2009-08-16T00:00:00-04:00</updated>
+    <id>http://kevinsheffield.github.com/blog/2009/08/16/assignment-2b-cs193p-via-monotouch</id>
+    <content type="html"><![CDATA[<p>Here is the video for Assignment 2B.  Course materials can be downloaded from the CS193p website, although they may be removed at the start of the fall semester.</p>
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="400" height="300" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://vimeo.com/moogaloop.swf?clip_id=6131105&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" /><embed type="application/x-shockwave-flash" width="400" height="300" src="http://vimeo.com/moogaloop.swf?clip_id=6131105&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+
+
+<p><a href="http://vimeo.com/6131105">Monotouch CS193P Assmt 2B</a> from <a href="http://vimeo.com/user2165949">Kevin Sheffield</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CS193P via Monotouch Launching]]></title>
+    <link href="http://kevinsheffield.github.com/blog/2009/08/15/cs193p-via-monotouch-launching/"/>
+    <updated>2009-08-15T00:00:00-04:00</updated>
+    <id>http://kevinsheffield.github.com/blog/2009/08/15/cs193p-via-monotouch-launching</id>
+    <content type="html"><![CDATA[<p>I just finished recording a walkthrough of assignment 1 and it is uploading to a few sites so I can compare them.  I have never really done any screencasts aside from a few simple "how to use this page I just made" videos for work using camtasia (and those sucked I am sure), so as I post these, let me know how I can improve not only the code but also my presentation skills.</p>
+
+<p>Before I post any of the videos I did want to put down a disclaimer:</p>
+
+<p>I am not associated with the CS193p course or Monotouch.  All code you see in the screencasts may not be best practice and as Monotouch is in beta, functionality may be different at the time of your viewing of this video.</p>
+
+<p>I will try and update videos as I get feedback and as the project advances if need be.</p>
+
+<p>Please provide any feedback you wish, but constructive feedback is what is going to most help shape these videos into something truly useful.</p>
+
+<p>I hope you enjoy messing with Monotouch as much as I am.</p>
+]]></content>
+  </entry>
+  
+</feed>

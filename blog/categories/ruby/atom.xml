@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | My Octopress Blog]]></title>
+  <link href="http://kevinsheffield.github.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://kevinsheffield.github.com/"/>
+  <updated>2012-05-02T18:46:41-04:00</updated>
+  <id>http://kevinsheffield.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby + Windows + Sql Server]]></title>
+    <link href="http://kevinsheffield.github.com/blog/2011/01/04/ruby-windows-sql-server/"/>
+    <updated>2011-01-04T00:00:00-05:00</updated>
+    <id>http://kevinsheffield.github.com/blog/2011/01/04/ruby-windows-sql-server</id>
+    <content type="html"><![CDATA[<p>I love it when I spend a few hours getting something working only to not write down the steps I did to solve the magic riddle that Ruby on Windows seems to be.  Fast forward a few months, a wiped computer and enough beers to make sure I can barely remember last night's dinner and what we have here is a failure to communicate... with myself.</p>
+
+<p>This post is a reminder to myself on how to set up a fresh windows install to be able to query Sql Server via Ruby.</p>
+
+<p>The way this is going to be done is via 2 gems... dbi and dbd-odbc.</p>
+
+<p>*replace C:\Ruby187 below with whatever the install path selected during the installation</p>
+
+<ol>
+<li>Install Ruby via the <a href="http://rubyinstaller.org/downloads/">1-click installer</a>.   I have only used 1.8.7 for this.</li>
+<li>Update rubygems (gem update --system).</li>
+<li>Install dbi gem (gem install dbi).</li>
+<li>Install dbd-odbc gem (gem install dbd-odbc).</li>
+<li>Copy C:\Ruby187\lib\ruby\gems\1.8\gems\dbd-odbc-0.2.5\lib\dbd to C:\Ruby187\lib\ruby\gems\1.8\gems\dbi-0.4.5\lib.
+(this will result in the following file path being valid... C:\Ruby187\lib\ruby\gems\1.8\gems\dbi-0.4.5\lib\dbd\odbc.rb).</li>
+<li>Go to http://www.ch-werner.de/rubyodbc/ and download i386-msvcrt-ruby-odbc.zip.<br/>
+Put the 2 .so files in the .../ruby/1.8/i386-mingw32 directory.</li>
+</ol>
+
+
+<p>That is it.</p>
+
+<p>Now the following code will work like magic....</p>
+
+<p><code>
+ require 'rubygems'
+require 'dbi'
+oConn = DBI.connect('DBI:ODBC:sqldsn')
+sth = oConn.execute(commandstring)
+rows = sth.fetch_all
+col_names = sth.column_names
+sth.finish
+DBI::Utils::TableFormatter.ascii(col_names, rows)
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
