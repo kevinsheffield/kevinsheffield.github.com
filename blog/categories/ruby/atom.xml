@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Ruby | My Octopress Blog]]></title>
-  <link href="http://kevinsheffield.github.com/blog/categories/ruby/atom.xml" rel="self"/>
-  <link href="http://kevinsheffield.github.com/"/>
-  <updated>2012-05-02T18:48:13-04:00</updated>
-  <id>http://kevinsheffield.github.com/</id>
+  <title><![CDATA[Category: Ruby | Kevin Sheffield]]></title>
+  <link href="http://blog.ksheffield.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://blog.ksheffield.com/"/>
+  <updated>2012-05-02T18:52:29-04:00</updated>
+  <id>http://blog.ksheffield.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Kevin Sheffield]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ruby + Windows + Sql Server]]></title>
-    <link href="http://kevinsheffield.github.com/blog/2011/01/04/ruby-windows-sql-server/"/>
+    <link href="http://blog.ksheffield.com/blog/2011/01/04/ruby-windows-sql-server/"/>
     <updated>2011-01-04T00:00:00-05:00</updated>
-    <id>http://kevinsheffield.github.com/blog/2011/01/04/ruby-windows-sql-server</id>
+    <id>http://blog.ksheffield.com/blog/2011/01/04/ruby-windows-sql-server</id>
     <content type="html"><![CDATA[<p>I love it when I spend a few hours getting something working only to not write down the steps I did to solve the magic riddle that Ruby on Windows seems to be.  Fast forward a few months, a wiped computer and enough beers to make sure I can barely remember last night's dinner and what we have here is a failure to communicate... with myself.</p>
 
 <p>This post is a reminder to myself on how to set up a fresh windows install to be able to query Sql Server via Ruby.</p>
