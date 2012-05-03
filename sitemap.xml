@@ -1,57 +1,47 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://kevinsheffield.github.com/blog/2009/08/12/kicking-ass-with-monotouch/</loc>
+        <loc>http://blog.ksheffield.com/blog/2009/08/12/kicking-ass-with-monotouch/</loc>
         <lastmod>2012-05-02T18:39:17-04:00</lastmod>
     </url>
     <url>
-        <loc>http://kevinsheffield.github.com/blog/2009/08/13/viddler-vs-youtube-vs-vimeo/</loc>
+        <loc>http://blog.ksheffield.com/blog/2009/08/13/viddler-vs-youtube-vs-vimeo/</loc>
         <lastmod>2012-05-02T18:39:17-04:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://kevinsheffield.github.com/blog/2009/08/15/assignment-1-cs193p-via-monotouch/
-        </loc>
+        <loc>http://blog.ksheffield.com/blog/2009/08/15/assignment-1-cs193p-via-monotouch/</loc>
         <lastmod>2012-05-02T18:39:17-04:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://kevinsheffield.github.com/blog/2009/08/15/cs193p-via-monotouch-launching/
-        </loc>
+        <loc>http://blog.ksheffield.com/blog/2009/08/15/cs193p-via-monotouch-launching/</loc>
         <lastmod>2012-05-02T18:39:17-04:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://kevinsheffield.github.com/blog/2009/08/16/assignment-2b-cs193p-via-monotouch/
-        </loc>
+        <loc>http://blog.ksheffield.com/blog/2009/08/16/assignment-2b-cs193p-via-monotouch/</loc>
         <lastmod>2012-05-02T18:39:17-04:00</lastmod>
     </url>
     <url>
-        <loc>http://kevinsheffield.github.com/blog/2009/08/17/monotouch-beta-3-is-out/</loc>
+        <loc>http://blog.ksheffield.com/blog/2009/08/17/monotouch-beta-3-is-out/</loc>
         <lastmod>2012-05-02T18:39:17-04:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://kevinsheffield.github.com/blog/2009/09/14/monotouch-sectioned-uitableviews/
-        </loc>
+        <loc>http://blog.ksheffield.com/blog/2009/09/14/monotouch-sectioned-uitableviews/</loc>
         <lastmod>2012-05-02T18:39:17-04:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://kevinsheffield.github.com/blog/2009/09/15/monotouch-sample-code-on-github/
-        </loc>
+        <loc>http://blog.ksheffield.com/blog/2009/09/15/monotouch-sample-code-on-github/</loc>
         <lastmod>2012-05-02T18:39:17-04:00</lastmod>
     </url>
     <url>
-        <loc>http://kevinsheffield.github.com/blog/2011/01/04/ruby-windows-sql-server/</loc>
+        <loc>http://blog.ksheffield.com/blog/2011/01/04/ruby-windows-sql-server/</loc>
         <lastmod>2012-05-02T18:39:17-04:00</lastmod>
     </url>
     <url>
-        <loc>http://kevinsheffield.github.com/blog/archives/</loc>
+        <loc>http://blog.ksheffield.com/blog/archives/</loc>
         <lastmod>2012-05-02T18:39:18-04:00</lastmod>
     </url>
     <url>
-        <loc>http://kevinsheffield.github.com/</loc>
+        <loc>http://blog.ksheffield.com/</loc>
         <lastmod>2012-05-02T18:39:18-04:00</lastmod>
     </url>
 </urlset>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Kevin Sheffield]]></title>
-  <link href="http://kevinsheffield.github.com/atom.xml" rel="self"/>
-  <link href="http://kevinsheffield.github.com/"/>
-  <updated>2012-05-02T18:52:57-04:00</updated>
-  <id>http://kevinsheffield.github.com/</id>
+  <link href="http://blog.ksheffield.com/atom.xml" rel="self"/>
+  <link href="http://blog.ksheffield.com/"/>
+  <updated>2012-05-03T08:08:24-04:00</updated>
+  <id>http://blog.ksheffield.com/</id>
   <author>
     <name><![CDATA[Kevin Sheffield]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ruby + Windows + Sql Server]]></title>
-    <link href="http://kevinsheffield.github.com/blog/2011/01/04/ruby-windows-sql-server/"/>
+    <link href="http://blog.ksheffield.com/blog/2011/01/04/ruby-windows-sql-server/"/>
     <updated>2011-01-04T00:00:00-05:00</updated>
-    <id>http://kevinsheffield.github.com/blog/2011/01/04/ruby-windows-sql-server</id>
+    <id>http://blog.ksheffield.com/blog/2011/01/04/ruby-windows-sql-server</id>
     <content type="html"><![CDATA[<p>I love it when I spend a few hours getting something working only to not write down the steps I did to solve the magic riddle that Ruby on Windows seems to be.  Fast forward a few months, a wiped computer and enough beers to make sure I can barely remember last night&#8217;s dinner and what we have here is a failure to communicate&#8230; with myself.</p>
 
 <p>This post is a reminder to myself on how to set up a fresh windows install to be able to query Sql Server via Ruby.</p>
@@ -64,9 +64,9 @@ Put the 2 .so files in the &#8230;/ruby/1.8/i386-mingw32 directory.</li>
   
   <entry>
     <title type="html"><![CDATA[Monotouch Sample Code on Github]]></title>
-    <link href="http://kevinsheffield.github.com/blog/2009/09/15/monotouch-sample-code-on-github/"/>
+    <link href="http://blog.ksheffield.com/blog/2009/09/15/monotouch-sample-code-on-github/"/>
     <updated>2009-09-15T00:00:00-04:00</updated>
-    <id>http://kevinsheffield.github.com/blog/2009/09/15/monotouch-sample-code-on-github</id>
+    <id>http://blog.ksheffield.com/blog/2009/09/15/monotouch-sample-code-on-github</id>
     <content type="html"><![CDATA[<p>After a little bit of a tug of war, my sample code is now hosted on Github at <a href="http://github.com/kevinsheffield/MonoTouchDemos">http://github.com/kevinsheffield/MonoTouchDemos</a>.</p>
 
 <p>Check it out and give me feedback on the code and ideas for more posts!</p>
@@ -75,9 +75,9 @@ Put the 2 .so files in the &#8230;/ruby/1.8/i386-mingw32 directory.</li>
   
   <entry>
     <title type="html"><![CDATA[Monotouch : Sectioned UITableViews]]></title>
-    <link href="http://kevinsheffield.github.com/blog/2009/09/14/monotouch-sectioned-uitableviews/"/>
+    <link href="http://blog.ksheffield.com/blog/2009/09/14/monotouch-sectioned-uitableviews/"/>
     <updated>2009-09-14T00:00:00-04:00</updated>
-    <id>http://kevinsheffield.github.com/blog/2009/09/14/monotouch-sectioned-uitableviews</id>
+    <id>http://blog.ksheffield.com/blog/2009/09/14/monotouch-sectioned-uitableviews</id>
     <content type="html"><![CDATA[<p>I was playing around some more with UITableViews and wanted to get them working the way they do in Contacts with the vertical bar on the right side of the screen providing navigation to a certain section in the list (in the case of Contacts and this example, first letter of the word).</p>
 
 <p>It is amazingly simple.  Basically you only have to override and implement a few more functions of UITableDataSource&#8230; mainly SectionIndexTitles, NumberOfSections, TitleForHeader (and TitleForFooter if you wanted a footer), SectionFor, and RowsInSection.  So maybe that wasn&#8217;t just a few but they are really simple to implement.</p>
@@ -309,18 +309,18 @@ namespace SectionedUITableViewSample
   
   <entry>
     <title type="html"><![CDATA[Monotouch Beta 3 is out]]></title>
-    <link href="http://kevinsheffield.github.com/blog/2009/08/17/monotouch-beta-3-is-out/"/>
+    <link href="http://blog.ksheffield.com/blog/2009/08/17/monotouch-beta-3-is-out/"/>
     <updated>2009-08-17T00:00:00-04:00</updated>
-    <id>http://kevinsheffield.github.com/blog/2009/08/17/monotouch-beta-3-is-out</id>
+    <id>http://blog.ksheffield.com/blog/2009/08/17/monotouch-beta-3-is-out</id>
     <content type="html"><![CDATA[<p>I am stoked about downloading it when I get back from dinner.  Going to play with the drawing API tonight!</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Assignment 2B : CS193P via Monotouch]]></title>
-    <link href="http://kevinsheffield.github.com/blog/2009/08/16/assignment-2b-cs193p-via-monotouch/"/>
+    <link href="http://blog.ksheffield.com/blog/2009/08/16/assignment-2b-cs193p-via-monotouch/"/>
     <updated>2009-08-16T00:00:00-04:00</updated>
-    <id>http://kevinsheffield.github.com/blog/2009/08/16/assignment-2b-cs193p-via-monotouch</id>
+    <id>http://blog.ksheffield.com/blog/2009/08/16/assignment-2b-cs193p-via-monotouch</id>
     <content type="html"><![CDATA[<p>Here is the video for Assignment 2B.  Course materials can be downloaded from the CS193p website, although they may be removed at the start of the fall semester.</p>
 
 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="400" height="300" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://vimeo.com/moogaloop.swf?clip_id=6131105&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" /><embed type="application/x-shockwave-flash" width="400" height="300" src="http://vimeo.com/moogaloop.swf?clip_id=6131105&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" allowscriptaccess="always" allowfullscreen="true"></embed></object>
@@ -332,9 +332,9 @@ namespace SectionedUITableViewSample
   
   <entry>
     <title type="html"><![CDATA[CS193P via Monotouch Launching]]></title>
-    <link href="http://kevinsheffield.github.com/blog/2009/08/15/cs193p-via-monotouch-launching/"/>
+    <link href="http://blog.ksheffield.com/blog/2009/08/15/cs193p-via-monotouch-launching/"/>
     <updated>2009-08-15T00:00:00-04:00</updated>
-    <id>http://kevinsheffield.github.com/blog/2009/08/15/cs193p-via-monotouch-launching</id>
+    <id>http://blog.ksheffield.com/blog/2009/08/15/cs193p-via-monotouch-launching</id>
     <content type="html"><![CDATA[<p>I just finished recording a walkthrough of assignment 1 and it is uploading to a few sites so I can compare them.  I have never really done any screencasts aside from a few simple &#8220;how to use this page I just made&#8221; videos for work using camtasia (and those sucked I am sure), so as I post these, let me know how I can improve not only the code but also my presentation skills.</p>
 
 <p>Before I post any of the videos I did want to put down a disclaimer:</p>
@@ -351,9 +351,9 @@ namespace SectionedUITableViewSample
   
   <entry>
     <title type="html"><![CDATA[Assignment 1 : CS193P via Monotouch]]></title>
-    <link href="http://kevinsheffield.github.com/blog/2009/08/15/assignment-1-cs193p-via-monotouch/"/>
+    <link href="http://blog.ksheffield.com/blog/2009/08/15/assignment-1-cs193p-via-monotouch/"/>
     <updated>2009-08-15T00:00:00-04:00</updated>
-    <id>http://kevinsheffield.github.com/blog/2009/08/15/assignment-1-cs193p-via-monotouch</id>
+    <id>http://blog.ksheffield.com/blog/2009/08/15/assignment-1-cs193p-via-monotouch</id>
     <content type="html"><![CDATA[<p>Here is the video for Assignment 1.  Course materials can be downloaded from the CS193p website, although they may be removed at the start of the fall semester.</p>
 
 <p>I am going to try and go with Vimeo for the time being but this video is also on Viddler.</p>
@@ -367,18 +367,18 @@ namespace SectionedUITableViewSample
   
   <entry>
     <title type="html"><![CDATA[Viddler vs YouTube vs Vimeo]]></title>
-    <link href="http://kevinsheffield.github.com/blog/2009/08/13/viddler-vs-youtube-vs-vimeo/"/>
+    <link href="http://blog.ksheffield.com/blog/2009/08/13/viddler-vs-youtube-vs-vimeo/"/>
     <updated>2009-08-13T00:00:00-04:00</updated>
-    <id>http://kevinsheffield.github.com/blog/2009/08/13/viddler-vs-youtube-vs-vimeo</id>
+    <id>http://blog.ksheffield.com/blog/2009/08/13/viddler-vs-youtube-vs-vimeo</id>
     <content type="html"><![CDATA[<p>I am going to be recording Assignments 1 and 2 of CS193p only using Monotouch tomorrow.  After I record assignment 1, I am going to see what service suits me best and run with it.  If anyone has a suggestion for what works best with the idea that I will be mainly concerned with displaying screencasts, let me know here or via <a href="http://twitter.com/k_sheffield">twitter</a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Kicking Ass with Monotouch]]></title>
-    <link href="http://kevinsheffield.github.com/blog/2009/08/12/kicking-ass-with-monotouch/"/>
+    <link href="http://blog.ksheffield.com/blog/2009/08/12/kicking-ass-with-monotouch/"/>
     <updated>2009-08-12T00:00:00-04:00</updated>
-    <id>http://kevinsheffield.github.com/blog/2009/08/12/kicking-ass-with-monotouch</id>
+    <id>http://blog.ksheffield.com/blog/2009/08/12/kicking-ass-with-monotouch</id>
     <content type="html"><![CDATA[<p>A few days ago I was lucky to become a part of the <a href="http://www.mono-project.com/MonoTouch">Monotouch</a> beta program and I must say that I cannot believe how cool it is so far.  I have seen a few screencasts from people making hello world (or really button press counter) apps and thought, &#8220;Hell, I was going through the Stanford Iphone class, why not do all the assignments using Monotouch?&#8221;  Last night I ran through Assignment 2B and I am going to attempt a screencast with my very best Ron Burgundy voice in the next few days.  I will tag any posts related to this endeavor with &#8216;monotouch&#8217; so feel free to follow along.</p>
 
 <p>If anyone has some suggestions for good screen recording software on OSX feel free to comment, I am new to the mac world and have only ever used Camtasia on windows.</p>
