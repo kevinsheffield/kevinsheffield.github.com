@@ -141,7 +141,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.ksheffield.com/blog/2009/08/13/viddler-vs-youtube-vs-vimeo/" data-via="" data-counturl="http://blog.ksheffield.com/blog/2009/08/13/viddler-vs-youtube-vs-vimeo/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.ksheffield.com/blog/2009/08/13/viddler-vs-youtube-vs-vimeo/" data-via="k_sheffield" data-counturl="http://blog.ksheffield.com/blog/2009/08/13/viddler-vs-youtube-vs-vimeo/" >Tweet</a>
   
   
   
@@ -229,6 +229,22 @@
   <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("k_sheffield", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/k_sheffield" class="twitter-follow-button" data-show-count="false">Follow @k_sheffield</a>
+  
+</section>
 
 
 
